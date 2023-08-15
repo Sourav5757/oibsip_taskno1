@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --text: 30px;
+    --head: 100px;
+    --bg-color: #99f70c;
+  }
+
+  body {
+    font-family: "regular", sans-serif;
+    font-size: medium;
+    font-style: calc();
+  }
+
+  .hero-section {
+    min-height: 40px;
+    background: url("https://www.tastingtable.com/img/gallery/what-makes-restaurant-burgers-taste-different-from-homemade-burgers-upgrade/l-intro-1662064407.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 10;
+    animation: slide 1s ease-in-out;
+    backface-visibility: visible;
+    background-color: aliceblue;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    padding: 50px;
+    color: white;
+    transform: translateY(-100%);
+    animation: movedown 850ms ease-in 1s forwards;
+  }
+
+  @keyframes movedown {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(50%);
+    }
+  }
+
+  .navbar ul {
+    list-style: lower-roman;
+  }
+
+  .navbar ul li {
+    display: ruby;
+    margin-left: 10rem;
+    font-size: var(--text);
+  }
+
+  .navbar ul li a {
+    text-decoration: rgb(223, 177, 7);
+    color: white;
+    border-bottom: 2px solid transparent;
+  }
+
+  .navbar ul li a:hover {
+    border-bottom: 2px solid var(--bg-color);
+  }
+
+  .hero-text {
+    color: white;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  @keyframes slide {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0%);
+    }
+  }
+
+  .hero-text::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: black;
+    z-index: -1;
+    top: 0;
+    opacity: 0.6;
+  }
+
+  .hero-text a {
+    color: white;
+    background: var(--bg-color);
+    font-weight: 900;
+    font-size: var(--text);
+    padding: 0.8rem 1rem;
+    margin: 0.8rem auto;
+    display: block;
+    text-decoration: none;
+    transition: opacity 250ms linear;
+  }
+
+  .hero-text a:hover {
+    color: aqua;
+    opacity: 0.7;
+  }
+
+  .hero-text h2 {
+    font-size: var(--head);
+  }
+
+  .hero-text p {
+    font-size: 3rem;
+  }
